@@ -1,0 +1,25 @@
+{
+  "scriptFile": "__init__.py",
+  "bindings": [
+    {
+      "authLevel": "anonymous",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req",
+      "subscriptionId": "req",
+      "startTime": "req",
+      "endTime": "req",
+      "meterCategory":"req",
+      "methods": [
+        "get",
+        "post"
+      ]
+    },
+    {
+      "type": "blob",
+      "direction": "out",
+      "name": "outputBlob",
+      "path": "output/CostBIlling_{name}_{subscriptionId}_{startTime}_{endTime}.csv"
+    }
+  ]
+}
