@@ -13,8 +13,8 @@ from urlrequest import UrlRequest
 def generate_cost_details_report():
     global report_metadata
 
-    #credential = DefaultAzureCredential()
-    credential = AzureCliCredential()
+    credential = DefaultAzureCredential()
+    #credential = AzureCliCredential()
     client = CostManagementClient(credential)
     scope = '/subscriptions/' + subscriptionId
     parameters = {}
