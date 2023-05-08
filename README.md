@@ -21,11 +21,11 @@ This azure function uses Azure Active Directory **(AAD)** feature to authenticat
 
 - Modify the configuration application settings of AzureWebJobsStorage after deploying your app to Azure. This is necessary if you want to use Azure Data Lake Storage Gen2 (ADLS2) as your storage account.
 
-  1. The first step is to find the AzureWebJobsStorage setting in your app's configuration blade on the Azure portal. This setting contains the connection string for your storage account. By default, it uses a blob storage account.
+  1. The first step is to find the ```AzureWebJobsStorage``` setting in your app's configuration blade on the Azure portal. This setting contains the connection string for your storage account. By default, it uses a blob storage account.
 
-  2. The second step is to change the name of the setting from AzureWebJobsStorage to AzureWebJobsStorage__accountName, where accountName is the name of your ADLS2 storage account. For example, if your ADLS2 storage account name is mystorage, you would change the setting name to AzureWebJobsStorage__accountname.
+  2. The second step is to change the name of the setting from ```AzureWebJobsStorage``` to ```AzureWebJobsStorage__accountName```, where accountName is the name of your ADLS2 storage account. For example, if your ADLS2 storage account name is mystorage, you would change the setting name to ```AzureWebJobsStorage__accountname```.
 
-  3. The third step is to change the value of the setting from the connection string to just the ADLS2 storage account name. For example, if your ADLS2 storage account name is mystorage, you would change the setting value to mystorage.
+  3. The third step is to change the value of the setting from the connection string to just the ADLS2 storage account name. For example, if your ADLS2 storage account name is `mystorage`, you would change the setting value to `mystorage`.
 
   4. The final step is to save your changes and restart your app. You should now be able to use ADLS2 as your storage account for your app.
 
