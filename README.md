@@ -1,5 +1,20 @@
 # Azure Functions to Extract Costbilling Data
-The example shows you how to develop a Python azure function that can extract CostBilling Report from your Azure subscription. This azure function uses Azure Active Directory (AAD) feature to authenticate and authorize the access to the report data.
+
+The azure function is an example to show how to extract costbilling data from Azure subscription. The azure function calls the ***Generate Cost Details Report REST API***, which returns a CSV file with the cost details for a specified time period and scope. You can use this data to analyze your Azure spending and optimize your cloud resources.
+
+This azure function uses Azure Active Directory **(AAD)** feature to authenticate and authorize the access to the report data.
+
+
+## Create function app settings used 
+
+| **Congiration** | **Value** |
+| ---------- | -------- |
+| **Runtime Stack** | Python |
+| **Version** | 3.10 |
+| **Operating System** | Linux |
+| **Hosting options and plans** | App Service Plan |
+
+
 
 
 ## Configration changes to add AAD support
@@ -16,6 +31,15 @@ The example shows you how to develop a Python azure function that can extract Co
 
 - Adding system identity to function app is important to enable Azure AD support. System identity is a feature of Azure that allows your app to access other Azure services without storing any secrets. You can use system identity to authenticate to Azure SQL, Application Insights, Service Bus and more. To use system identity, you need to enable it in your function app settings and assign the appropriate roles to the identity in the target resources.  [Add system assigned identity]( https://learn.microsoft.com/EN-us/azure/app-service/overview-managed-identity?toc=%2Fazure%2Fazure-functions%2Ftoc.json&tabs=portal%2Chttp#add-a-system-assigned-identity)
 
-- Grant the system-assigned identity access to the storage account [more details]( https://learn.microsoft.com/EN-us/azure/azure-functions/functions-identity-based-connections-tutorial#grant-the-system-assigned-identity-access-to-the-storage-account)
+- Create a role assignment granting the system-assigned identity access to your storage account [more details]( https://learn.microsoft.com/EN-us/azure/azure-functions/functions-identity-based-connections-tutorial#grant-the-system-assigned-identity-access-to-the-storage-account)
 
+### Function Parameters 
+The funciton accepts the following parameters to extract the report data
 
+| **Parameter Name** | **Value** | **Description** |
+| ---------- | -------- | -------|
+| **name** | filename |Name of a file|
+| **subscriptionId** | xxxx-xxxx-xxx-xxxxx |Resource ID for subscription | 
+| **startTime** | e.g 2023-04-01T00:00:00 |  Billing Period Start Date|
+| **endTime** |  e.g 2023-04-30T00:00:00 |  Billing Period End Date|
+| **meterCategory** | cosmosdb,All |Report resource scope|
