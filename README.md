@@ -14,12 +14,8 @@ The example shows you how to develop a Python azure function that can extract Co
 
 - The final step is to save your changes and restart your app. You should now be able to use ADLS2 as your storage account for your app.
 
-- Add system assigned identity using the steps mentioned below.
-https://learn.microsoft.com/EN-us/azure/app-service/overview-managed-identity?toc=%2Fazure%2Fazure-functions%2Ftoc.json&tabs=portal%2Chttp#add-a-system-assigned-identity
+- Add system assigned identity [using the steps]( https://learn.microsoft.com/EN-us/azure/app-service/overview-managed-identity?toc=%2Fazure%2Fazure-functions%2Ftoc.json&tabs=portal%2Chttp#add-a-system-assigned-identity)
 
-- Grant the system-assigned identity access to the storage account
-
-## see also
-https://learn.microsoft.com/EN-us/azure/azure-functions/functions-identity-based-connections-tutorial#grant-the-system-assigned-identity-access-to-the-storage-account
+- Grant the system-assigned identity access to the storage account [more details]( https://learn.microsoft.com/EN-us/azure/azure-functions/functions-identity-based-connections-tutorial#grant-the-system-assigned-identity-access-to-the-storage-account)
 
 
