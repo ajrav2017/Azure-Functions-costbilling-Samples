@@ -14,7 +14,7 @@ The example shows you how to develop a Python azure function that can extract Co
 
   4. The final step is to save your changes and restart your app. You should now be able to use ADLS2 as your storage account for your app.
 
-- Add system assigned identity [using the steps]( https://learn.microsoft.com/EN-us/azure/app-service/overview-managed-identity?toc=%2Fazure%2Fazure-functions%2Ftoc.json&tabs=portal%2Chttp#add-a-system-assigned-identity)
+- Adding system identity to function app is important to enable Azure AD support. System identity is a feature of Azure that allows your app to access other Azure services without storing any secrets. You can use system identity to authenticate to Azure SQL, Application Insights, Service Bus and more. To use system identity, you need to enable it in your function app settings and assign the appropriate roles to the identity in the target resources.  [Add system assigned identity]( https://learn.microsoft.com/EN-us/azure/app-service/overview-managed-identity?toc=%2Fazure%2Fazure-functions%2Ftoc.json&tabs=portal%2Chttp#add-a-system-assigned-identity)
 
 - Grant the system-assigned identity access to the storage account [more details]( https://learn.microsoft.com/EN-us/azure/azure-functions/functions-identity-based-connections-tutorial#grant-the-system-assigned-identity-access-to-the-storage-account)
 
